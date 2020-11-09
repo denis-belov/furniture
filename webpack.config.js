@@ -103,8 +103,8 @@ module.exports = (env, argv) => ({
     }),
 
     new CopyPlugin([
-      { from: 'src/models', to: 'build/models' },
-      { from: 'src/textures', to: 'build/textures' },
+      { from: 'src/models', to: 'models' },
+      { from: 'src/textures', to: 'textures' },
     ]),
   ],
 
