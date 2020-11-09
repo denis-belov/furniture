@@ -29,7 +29,7 @@
   },
   "scripts": {
     "serve": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=development"
   },
   "dependencies": {
     "three": "^0.122.0"
