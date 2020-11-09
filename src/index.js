@@ -3911,6 +3911,8 @@ no-underscore-dangle,
 
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.outputEncoding = THREE.sRGBEncoding;
+// renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0xEEEEEE);
 renderer.clearColor();
@@ -3946,13 +3948,13 @@ cube_camera2.position.set(0, 0, 100);
 
 
 // lights
-const hemisphere_light = new THREE.HemisphereLight(0xFFFFFF, 0xFFFFFF, 1);
+const hemisphere_light = new THREE.HemisphereLight('white', 'white', 1);
 scene.add(hemisphere_light);
 
-const directional_light = new THREE.DirectionalLight(0xFFFFFF, 1);
-directional_light.position.set(500, 1000, 200);
-scene.add(directional_light);
-scene.add(directional_light.target);
+// const directional_light = new THREE.DirectionalLight(0xFFFFFF, 2);
+// directional_light.position.set(500, 1000, 200);
+// scene.add(directional_light);
+// scene.add(directional_light.target);
 
 
 
@@ -4005,7 +4007,7 @@ let drag_objects = [];
   CubeTextureLoader.setPath('textures/');
   const cube_map = await CubeTextureLoader.load([ 'posx.jpg', 'negx.jpg', 'posy.jpg', 'negy.jpg', 'posz.jpg', 'negz.jpg' ]);
 
-  console.log(cube_map);
+  // console.log(cube_map);
 
   cube_map.generateMipmaps = true;
   cube_map.minFilter = THREE.LinearFilter;
@@ -4025,17 +4027,19 @@ let drag_objects = [];
 
     await loadGLTF('models/ilona_sb_3077.glb', cube_map, (_object) => {
       _object.scale.set(15000, 15000, 15000);
-      _object.position.set(-71746.02129861472, 4330.789296506358, -0.0005818799174654313);
+      _object.position.set(55491.60138771952, 175.69038497094516, -0.00002360556062065407);
+      _object.rotation.set(0, 0, Math.PI * 0.5);
     }),
 
     await loadGLTF('models/ilona_sb_3078.glb', cube_map, (_object) => {
       _object.scale.set(15000, 15000, 15000);
-      _object.position.set(-87397.19597806271, 17247.599060596625, -0.0023173677675236504);
+      _object.position.set(42919.02506199847, 17247.599060596625, -0.0023173677675236504);
+      _object.rotation.set(0, 0, Math.PI * 0.5);
     }),
 
     await loadGLTF('models/medeia_sb_2347WH.glb', cube_map, (_object) => {
       _object.scale.set(150, 150, 150);
-      _object.position.set(-94822.2870785618, 61346.43131030974, -0.008242436639948265);
+      _object.position.set(-54570.30958093, -10376.762781922997, 0.0013942100324161406);
       _object.rotation.set(0, 0, -Math.PI * 0.5);
     }),
   ];
