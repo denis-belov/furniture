@@ -21,14 +21,14 @@ import '@babel/polyfill';
 import * as THREE from 'three';
 import getGLTFLoader from 'three/examples/js/loaders/GLTFLoader.js';
 import getOrbitControls from 'three/examples/js/controls/OrbitControls.js';
-import getDragControls from 'three/examples/js/controls/DragControls.js';
+// import getDragControls from 'three/examples/js/controls/DragControls.js';
 import getTransformControls from 'three/examples/js/controls/TransformControls.js';
 
 
 
 getGLTFLoader(THREE);
 getOrbitControls(THREE);
-getDragControls(THREE);
+// getDragControls(THREE);
 getTransformControls(THREE);
 
 
