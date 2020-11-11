@@ -67479,11 +67479,11 @@ var canvas = renderer.domElement;
 var GLTFLoader = new three__WEBPACK_IMPORTED_MODULE_2__["GLTFLoader"]();
 var CubeTextureLoader = new three__WEBPACK_IMPORTED_MODULE_2__["CubeTextureLoader"]();
 var scene = new three__WEBPACK_IMPORTED_MODULE_2__["Scene"]();
-var camera = new three__WEBPACK_IMPORTED_MODULE_2__["PerspectiveCamera"](75, window.innerWidth / window.innerHeight, 0.1, 10000);
+var camera = new three__WEBPACK_IMPORTED_MODULE_2__["PerspectiveCamera"](45, window.innerWidth / window.innerHeight, 0.1, 1000);
 canvas.addEventListener('wheel', function (evt) {
-  return camera.translateZ(Math.sign(evt.deltaY) * 100);
+  return camera.translateZ(Math.sign(evt.deltaY) * 0.1);
 });
-camera.translateZ(1000);
+camera.translateZ(1);
 var cube_render_target = new three__WEBPACK_IMPORTED_MODULE_2__["WebGLCubeRenderTarget"](2048, {
   format: three__WEBPACK_IMPORTED_MODULE_2__["RGBFormat"],
   generateMipmaps: true,
@@ -67565,18 +67565,18 @@ _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
           cube_map.magFilter = three__WEBPACK_IMPORTED_MODULE_2__["LinearFilter"];
           _context.next = 9;
           return loadGLTF('models/ameli_sb_2720.glb', cube_map, function (_object) {
-            _object.scale.set(150, 150, 150);
+            _object.scale.set(150 * 0.001, 150 * 0.001, 150 * 0.001);
 
-            _object.position.set(49576.31168800746, -35048.892479107446, 0.0047091292764270725);
+            _object.position.set(49576.31168800746 * 0.001, -35048.892479107446 * 0.001, 0.0047091292764270725 * 0.001);
           });
 
         case 9:
           _context.t0 = _context.sent;
           _context.next = 12;
           return loadGLTF('models/ilona_sb_3076.glb', cube_map, function (_object) {
-            _object.scale.set(15000, 15000, 15000);
+            _object.scale.set(15000 * 0.001, 15000 * 0.001, 15000 * 0.001);
 
-            _object.position.set(-54703.92379456464, -31448.78168651748, 0.004225422489745499);
+            _object.position.set(-54703.92379456464 * 0.001, -31448.78168651748 * 0.001, 0.004225422489745499 * 0.001);
 
             _object.rotation.set(0, 0, -Math.PI * 0.5);
           });
@@ -67585,9 +67585,9 @@ _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
           _context.t1 = _context.sent;
           _context.next = 15;
           return loadGLTF('models/ilona_sb_3077.glb', cube_map, function (_object) {
-            _object.scale.set(15000, 15000, 15000);
+            _object.scale.set(15000 * 0.001, 15000 * 0.001, 15000 * 0.001);
 
-            _object.position.set(55491.60138771952, 175.69038497094516, -0.00002360556062065407);
+            _object.position.set(55491.60138771952 * 0.001, 175.69038497094516 * 0.001, -0.00002360556062065407 * 0.001);
 
             _object.rotation.set(0, 0, Math.PI * 0.5);
           });
@@ -67596,9 +67596,9 @@ _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
           _context.t2 = _context.sent;
           _context.next = 18;
           return loadGLTF('models/ilona_sb_3078.glb', cube_map, function (_object) {
-            _object.scale.set(15000, 15000, 15000);
+            _object.scale.set(15000 * 0.001, 15000 * 0.001, 15000 * 0.001);
 
-            _object.position.set(42919.02506199847, 17247.599060596625, -0.0023173677675236504);
+            _object.position.set(42919.02506199847 * 0.001, 17247.599060596625 * 0.001, -0.0023173677675236504 * 0.001);
 
             _object.rotation.set(0, 0, Math.PI * 0.5);
           });
@@ -67607,9 +67607,9 @@ _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
           _context.t3 = _context.sent;
           _context.next = 21;
           return loadGLTF('models/medeia_sb_2347WH.glb', cube_map, function (_object) {
-            _object.scale.set(150, 150, 150);
+            _object.scale.set(150 * 0.001, 150 * 0.001, 150 * 0.001);
 
-            _object.position.set(-54570.30958093, -10376.762781922997, 0.0013942100324161406);
+            _object.position.set(-54570.30958093 * 0.001, -10376.762781922997 * 0.001, 0.0013942100324161406 * 0.001);
 
             _object.rotation.set(0, 0, -Math.PI * 0.5);
           });
@@ -67620,7 +67620,9 @@ _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
           _context.t5 = scene.add;
           _context.t6 = scene;
           _context.next = 27;
-          return loadGLTF('models/conference_room1.glb', cube_map);
+          return loadGLTF('models/conference_room1.glb', cube_map, function (_object) {
+            return _object.scale.set(0.001, 0.001, 0.001);
+          });
 
         case 27:
           _context.t7 = _context.sent;

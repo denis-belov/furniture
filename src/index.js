@@ -3931,9 +3931,9 @@ const CubeTextureLoader = new THREE.CubeTextureLoader();
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
-canvas.addEventListener('wheel', (evt) => camera.translateZ((Math.sign(evt.deltaY) * 100)));
-camera.translateZ(1000);
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+canvas.addEventListener('wheel', (evt) => camera.translateZ(Math.sign(evt.deltaY) * 0.1));
+camera.translateZ(1);
 
 
 
@@ -4015,36 +4015,36 @@ let drag_objects = [];
 
   drag_objects = [
     await loadGLTF('models/ameli_sb_2720.glb', cube_map, (_object) => {
-      _object.scale.set(150, 150, 150);
-      _object.position.set(49576.31168800746, -35048.892479107446, 0.0047091292764270725);
+      _object.scale.set(150 * 0.001, 150 * 0.001, 150 * 0.001);
+      _object.position.set(49576.31168800746 * 0.001, -35048.892479107446 * 0.001, 0.0047091292764270725 * 0.001);
     }),
 
     await loadGLTF('models/ilona_sb_3076.glb', cube_map, (_object) => {
-      _object.scale.set(15000, 15000, 15000);
-      _object.position.set(-54703.92379456464, -31448.78168651748, 0.004225422489745499);
+      _object.scale.set(15000 * 0.001, 15000 * 0.001, 15000 * 0.001);
+      _object.position.set(-54703.92379456464 * 0.001, -31448.78168651748 * 0.001, 0.004225422489745499 * 0.001);
       _object.rotation.set(0, 0, -Math.PI * 0.5);
     }),
 
     await loadGLTF('models/ilona_sb_3077.glb', cube_map, (_object) => {
-      _object.scale.set(15000, 15000, 15000);
-      _object.position.set(55491.60138771952, 175.69038497094516, -0.00002360556062065407);
+      _object.scale.set(15000 * 0.001, 15000 * 0.001, 15000 * 0.001);
+      _object.position.set(55491.60138771952 * 0.001, 175.69038497094516 * 0.001, -0.00002360556062065407 * 0.001);
       _object.rotation.set(0, 0, Math.PI * 0.5);
     }),
 
     await loadGLTF('models/ilona_sb_3078.glb', cube_map, (_object) => {
-      _object.scale.set(15000, 15000, 15000);
-      _object.position.set(42919.02506199847, 17247.599060596625, -0.0023173677675236504);
+      _object.scale.set(15000 * 0.001, 15000 * 0.001, 15000 * 0.001);
+      _object.position.set(42919.02506199847 * 0.001, 17247.599060596625 * 0.001, -0.0023173677675236504 * 0.001);
       _object.rotation.set(0, 0, Math.PI * 0.5);
     }),
 
     await loadGLTF('models/medeia_sb_2347WH.glb', cube_map, (_object) => {
-      _object.scale.set(150, 150, 150);
-      _object.position.set(-54570.30958093, -10376.762781922997, 0.0013942100324161406);
+      _object.scale.set(150 * 0.001, 150 * 0.001, 150 * 0.001);
+      _object.position.set(-54570.30958093 * 0.001, -10376.762781922997 * 0.001, 0.0013942100324161406 * 0.001);
       _object.rotation.set(0, 0, -Math.PI * 0.5);
     }),
   ];
 
-  scene.add(await loadGLTF('models/conference_room1.glb', cube_map), ...drag_objects);
+  scene.add(await loadGLTF('models/conference_room1.glb', cube_map, (_object) => _object.scale.set(0.001, 0.001, 0.001)), ...drag_objects);
   // scene.add(...drag_objects);
 
 
